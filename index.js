@@ -15,9 +15,9 @@ const validateUserInput = (value) => {
 // Validate the user license
 const validateLicense = (value) {
     if (value === "GNU AGPLv3") {
-        return "[![License: APGL v3](https://img.shields.io/badge/License-AGPL)]"
+        return "[![License: APGL v3](https://img.shields.io/badge/License-AGPL)]";
     }
-}
+};
 
 // an array of questions for user input
 const questions = [
