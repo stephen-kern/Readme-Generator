@@ -1,16 +1,23 @@
-// TODO: Include packages needed for this application
+// Included packages
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 // validate the user input
-const validateUserInput = () => {
+const validateUserInput = (value) => {
     if (value != "") {
         return true;
     } else {
         return "Please answer the question"
     }
 };
+
+// Validate the user license
+const validateLicense = (value) {
+    if (value === "GNU AGPLv3") {
+        return "[![License: APGL v3](https://img.shields.io/badge/License-AGPL)]"
+    }
+}
 
 // an array of questions for user input
 const questions = [
