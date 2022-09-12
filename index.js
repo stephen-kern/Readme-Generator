@@ -12,13 +12,6 @@ const validateUserInput = (value) => {
     }
 };
 
-// Validate the user license
-const validateLicense = (value) {
-    if (value === "GNU AGPLv3") {
-        return "[![License: APGL v3](https://img.shields.io/badge/License-AGPL)]";
-    }
-};
-
 // an array of questions for user input
 const questions = [
     {
@@ -50,13 +43,13 @@ const questions = [
         name: 'license',
         message: 'Select a license for this project.',
         choices: [
-            "GNU AGPLv3",
-            "GNU GPLv3",
-            "GNU LGPLv3",
             "Apache 2.0",
-            "Boost Software 1.0",
+            "BSD3",
+            "BSD2",
+            "GNU GPLv3",
+            "GNU LGPL",
             "MIT",
-            "Mozilla",
+            "Mozilla 2.0",
         ],
         validate: validateUserInput,
     },
@@ -92,11 +85,23 @@ const questions = [
     },
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// function to write README file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, generateMarkdown(data), function (err) {
+        if (err) {
+            return console.log(err);
+        }
+    });
+};
 
-// TODO: Create a function to initialize app
-function init() {}
+// function to initialize app
+function init() {
+    inquirer.prompt(questions).then((data) => {
+        console.log(JSON.stringify(data, null, " "));
+        data.renderLicenseBadge(data.license);
+        writeToFile("README.md", data);
+    });
+};
 
 // Function call to initialize app
 init();
