@@ -1,7 +1,8 @@
 // Included packages
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateMarkdown = require('./utils/generateMarkdown');
+// const {generateMarkdown} = require('./utils/generateMarkdown');
+const {generateMarkdown, renderLicenseBadge} = require ('./utils/generateMarkdown.js');
 
 // validate the user input
 const validateUserInput = (value) => {
@@ -50,6 +51,7 @@ const questions = [
             "GNU LGPL",
             "MIT",
             "Mozilla 2.0",
+            "None"
         ],
         validate: validateUserInput,
     },
@@ -76,7 +78,7 @@ const questions = [
         name: 'userEmail',
         message: 'What is your email address?',
         validate: function (value) {
-            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+            if ("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9._]+\.[a-zA-Z]+$") {
                 return true;
             } else {
                 return "Please enter a valid email address."
@@ -98,7 +100,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((data) => {
         console.log(JSON.stringify(data, null, " "));
-        data.renderLicenseBadge(data.license);
+        data.renderLicenseBadge = renderLicenseBadge(data.license);
         writeToFile("README.md", data);
     });
 };
