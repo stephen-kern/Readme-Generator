@@ -2,7 +2,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 // const {generateMarkdown} = require('./utils/generateMarkdown');
-const {generateMarkdown, renderLicenseBadge} = require ('./utils/generateMarkdown.js');
+const {generateMarkdown, renderLicenseBadge, renderLicenselink} = require ('./utils/generateMarkdown.js');
 
 // validate the user input
 const validateUserInput = (value) => {
@@ -101,6 +101,7 @@ function init() {
     inquirer.prompt(questions).then((data) => {
         console.log(JSON.stringify(data, null, " "));
         data.renderLicenseBadge = renderLicenseBadge(data.license);
+        data.renderLicenselink = renderLicenselink(data.license);
         writeToFile("README.md", data);
     });
 };
