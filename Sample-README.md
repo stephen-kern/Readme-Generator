@@ -1,8 +1,8 @@
 
-  # readmegenerator [![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
+  # Readme-Generator  [![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
   
   ## Description
-  generates a readme for developer 
+  Quickly generate a readme file for your project!
 
   ## Table of Contents
   * [Installation](#installation)
@@ -13,19 +13,19 @@
   * [Questions](#questions)
   
   ## Installation
-  install node.js
+  must have node.js installed
 
   ## Usage 
-  run in terminal 
+  run "index.js" in the terminal 
 
   ## License 
-  Click here to read about this license: [BSD2](https://opensource.org/licenses/BSD-2-Clause)
+  Click here to read about this license: [Mozilla 2.0](https://opensource.org/licenses/MPL-2.0)
 
   ## Contributing
-  fork the repo
+  fork the repository and email me
 
   ## Tests
-  none
+  no tests for now
 
   ## Questions?
   * Github Username: [stephen-kern](https://github.com/stephen-kern)
