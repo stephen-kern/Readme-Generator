@@ -102,7 +102,7 @@ function init() {
         console.log(JSON.stringify(data, null, " "));
         data.renderLicenseBadge = renderLicenseBadge(data.license);
         data.renderLicenselink = renderLicenselink(data.license);
-        writeToFile("README.md", data);
+        writeToFile("Sample-README.md", data);
     });
 };
 
