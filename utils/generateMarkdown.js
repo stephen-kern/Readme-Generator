@@ -63,7 +63,7 @@ function generateMarkdown(data) {
   ${data.usage}
 
   ## License 
-  Click here to read about this license: [${data.license}](${renderLicenselink(data.license)})
+  Click here to read about this license: [${data.license}]${renderLicenselink(data.license)}
 
   ## Contributing
   ${data.contribution}

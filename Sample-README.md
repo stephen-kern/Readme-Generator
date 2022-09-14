@@ -1,8 +1,8 @@
 
-  # README-Generator [![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
+  # readmegenerator [![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
   
   ## Description
-  Quickly generate a readme using this app so developers can spend more time on their projects
+  generates a readme for developer 
 
   ## Table of Contents
   * [Installation](#installation)
@@ -16,13 +16,13 @@
   install node.js
 
   ## Usage 
-  run "node index.js" in the terminal 
+  run in terminal 
 
   ## License 
-  Click here to read about this license: [GNU LGPL]((https://www.gnu.org/licenses/lgpl-3.0))
+  Click here to read about this license: [BSD2](https://opensource.org/licenses/BSD-2-Clause)
 
   ## Contributing
-  fork the repo 
+  fork the repo
 
   ## Tests
   none
